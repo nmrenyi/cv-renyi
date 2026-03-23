@@ -1,0 +1,43 @@
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set date
+        run: echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+      - name: Compile English CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv-renyi-en
+          root_file: main.tex
+
+      - name: Compile French CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv-renyi-fr
+          root_file: main.tex
+
+      - name: Rename PDFs with date
+        run: |
+          cp cv-renyi-en/main.pdf cv-en-renyi-${{ env.DATE }}.pdf
+          cp cv-renyi-fr/main.pdf cv-fr-renyi-${{ env.DATE }}.pdf
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-renyi-${{ env.DATE }}
+          path: |
+            cv-en-renyi-${{ env.DATE }}.pdf
+            cv-fr-renyi-${{ env.DATE }}.pdf
+          retention-days: 90
