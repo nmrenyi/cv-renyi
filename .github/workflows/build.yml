@@ -32,8 +32,8 @@ jobs:
 
       - name: Rename PDFs with date
         run: |
-          cp cv-renyi-en/main.pdf cv-en-renyi-${{ env.DATE }}.pdf
-          cp cv-renyi-fr/main.pdf cv-fr-renyi-${{ env.DATE }}.pdf
+          cp cv-renyi-en/main.pdf cv-renyi-en-${{ env.DATE }}.pdf
+          cp cv-renyi-fr/main.pdf cv-renyi-fr-${{ env.DATE }}.pdf
 
       - name: Publish release
         run: |
@@ -44,7 +44,7 @@ jobs:
             --title "CV Ren Yi – ${{ env.DATE }}" \
             --notes "Built from commit [\`${GITHUB_SHA::7}\`](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})" \
             --latest \
-            "cv-en-renyi-${{ env.DATE }}.pdf" \
-            "cv-fr-renyi-${{ env.DATE }}.pdf"
+            "cv-renyi-en-${{ env.DATE }}.pdf" \
+            "cv-renyi-fr-${{ env.DATE }}.pdf"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

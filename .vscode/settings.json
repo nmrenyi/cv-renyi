@@ -16,7 +16,7 @@
             "command": "sh",
             "args": [
                 "-c",
-                "LANG=$(basename %DIR% | sed 's/cv-renyi-//'); cp %DIR%/main.pdf $(dirname %DIR%)/cv-${LANG}-renyi-$(date +%Y%m%d).pdf"
+                "LANG=$(basename %DIR% | sed 's/cv-renyi-//'); cp %DIR%/main.pdf $(dirname %DIR%)/cv-renyi-${LANG}-$(date +%Y%m%d).pdf"
             ]
         }
     ],
