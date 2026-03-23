@@ -1,36 +1,42 @@
 \section{Expériences de recherche}
 
+        \begin{twocolentry}{
+            août 2025 - fév. 2026
+        }
+            \textbf{Quantifier l'invisible : Les femmes médecins dans les Guides Rosenwald (1887–1940)}
 
-\textbf{Quantifier l’invisible : 
-Les femmes médecins dans les Guides Rosenwald
- (1887–1940) }\hfill  août 2025 - fév. 2026  [\href{https://drive.google.com/file/d/12LYws-7jR2z7q76M75Q9VIWCCAzLoBfk/view?usp=share_link}{Report}][\href{https://github.com/nmrenyi/double-triangle-annotation}{Annotation}][\href{https://github.com/nmrenyi/extraire-tesseract-openai}{Extraction}][\href{https://github.com/nmrenyi/rosenwald-benchmark}{Benchmark}][\href{https://github.com/nmrenyi/rosenwald-extraction}{Dataset}] 
-\begin{highlights}
+            [\href{https://drive.google.com/file/d/12LYws-7jR2z7q76M75Q9VIWCCAzLoBfk/view?usp=share_link}{Rapport}] [\href{https://github.com/nmrenyi/double-triangle-annotation}{Annotation}] [\href{https://github.com/nmrenyi/extraire-tesseract-openai}{Extraction}] [\href{https://github.com/nmrenyi/rosenwald-benchmark}{Benchmark}] [\href{https://github.com/nmrenyi/rosenwald-extraction}{Données}]
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+        \begin{highlights}
 
-    \item Collaboration avec des chercheur·e·s du Laboratory for the History of Science and Technology (EPFL) et de l’Institut des humanit\'es en m\'edecine (Lausanne) :
-    \item Conception d’un cadre d’annotation « double triangle » combinant LLMs et annotation humaine pour une annotation scalable et fiable, réduisant de >50\% l’effort d’annotation humaine tout en maintenant une précision >99\%.
-    \item Construction d’un jeu de données de référence (benchmark) basé sur les Rosenwald Guides pour l’évaluation de l’extraction d’informations structurées à partir de documents historiques.
-    \item Comparaison quantitative et qualitative de quatre paradigmes d’extraction sur le benchmark et application de la meilleure approche (image + texte OCR) pour extraire des entrées de médecins et d’officiels de santé (1887--1922) des Rosenwald Guides.
-    \item Extraction de plus de 3\,700 entrées de femmes médecins (1887--1922), permettant de futures études sur la pratique médicale des femmes.
+    \item Collaboration avec des chercheur·e·s du Laboratory for the History of Science and Technology (EPFL) et de l'Institut des humanit\'es en m\'edecine (Lausanne).
+    \item Conception d'un cadre d'annotation « double triangle » combinant LLMs et annotation humaine pour une annotation scalable et fiable, réduisant de >50\% l'effort d'annotation humaine tout en maintenant une précision >99\%. \textbf{Soumis à ACL Rolling Review (en cours d'évaluation)}.
+    \item Construction d'un jeu de données de référence de 2 600+ entrées de médecins des Guides Rosenwald à l'aide du cadre proposé, pour évaluer l'extraction d'informations structurées à partir de documents historiques.
+    \item Comparaison de quatre paradigmes d'extraction sur le benchmark et application de la meilleure approche (image + texte OCR) pour extraire 577 000+ entrées de médecins et d'officiels de santé des Guides Rosenwald.
+    \item Découverte de 3 700+ entrées de femmes médecins (1887--1922), permettant de futures études sur la pratique médicale féminine.
 \end{highlights}
+        \end{onecolentry}
         \vspace{0.2 cm}
 
         \begin{twocolentry}{
-            mars 2025 - juin 2025
+            fév. 2026 - présent
         }
+            \textbf{Agent conversationnel médical embarqué pour les sages-femmes, \href{https://www.d-tree.org/}{\textit{D-tree}}, Zanzibar, Tanzanie}
 
-
-
-\textbf{Contagion des sentiments sur les réseaux sociaux : étude de cas sur Reddit (EPFL)} [\href{https://drive.google.com/file/d/1ru6x50wjhKIaU_TofwGTCCQ2Brht1bEp/view?usp=share_link}{Rapport}]\end{twocolentry}
-
+            [\href{https://github.com/nmrenyi/mamai}{Code}]  [\href{https://www.youtube.com/watch?v=DbioClzbEKs}{Démo}] [\href{https://github.com/nmrenyi/obgyn-qa-collection}{Données}]
+        \end{twocolentry}
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Collaboration avec 3 membres ; analyse de plus de 6,4 millions de commentaires et 1 million de posts de r/unpopularopinion (Reddit) via une classification de sentiment basée sur RoBERTa, avec validation manuelle et régression linéaire
-                \item Les résultats montrent une influence statistiquement significative du sentiment des posts sur le sentiment des commentaires, confirmant une contagion émotionnelle dans le subreddit et apportant de nouveaux éclairages sur la propagation des émotions sur Reddit
+                \item Déploiement de \href{https://huggingface.co/google/gemma-3n-E4B-it-litert-preview}{Google Gemma 3n E4B IT (int4)} sur des appareils embarqués pour fournir des informations médicales hors ligne aux sages-femmes et infirmier·ère·s dans des contextes à faibles ressources (connectivité Internet limitée)
+                \item Application des techniques de Génération augmentée par récupération (RAG) sur des supports officiels de formation des sages-femmes pour améliorer la précision et la pertinence locale des réponses
+                \item Constitution d'un \href{https://github.com/nmrenyi/obgyn-qa-collection}{jeu de données OBGYN ouvert} de 20 500+ questions en filtrant cinq benchmarks médicaux publics (\href{https://arxiv.org/abs/2411.15640}{AfriMed-QA}, \href{https://proceedings.mlr.press/v174/pal22a}{MedMCQA}, \href{https://doi.org/10.1101/2025.10.25.25338798}{Kenya Clinical Vignettes}, \href{https://arxiv.org/abs/2009.13081}{MedQA-USMLE}, \href{https://arxiv.org/abs/2512.17028}{Women's Health Benchmark}) à l'aide des étiquettes existantes et de Gemini 3 Flash Preview pour la classification des questions
+                \item Évaluation comparative du modèle embarqué face à des modèles de référence (ex. GPT-5) sur le jeu de données OBGYN afin d'identifier les écarts de performance
+                \item Amélioration en cours de la qualité du RAG et préparation d'études d'évaluation avec les sages-femmes à Zanzibar
             \end{highlights}
         \end{onecolentry}
-
-        \vspace{0.2 cm}
 
 
         % \begin{twocolentry}{
@@ -46,4 +52,3 @@ Les femmes médecins dans les Guides Rosenwald
         %     \end{highlights}
         % \end{onecolentry}
         % \vspace{0.20 cm}
-        
