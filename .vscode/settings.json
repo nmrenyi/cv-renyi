@@ -1,0 +1,31 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "rename-pdf",
+            "command": "sh",
+            "args": [
+                "-c",
+                "LANG=$(basename %DIR% | sed 's/cv-renyi-//'); cp %DIR%/main.pdf $(dirname %DIR%)/cv-${LANG}-renyi-$(date +%Y%m%d).pdf"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk + rename",
+            "tools": ["latexmk", "rename-pdf"]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk + rename",
+    "latex-workshop.latex.autoBuild.run": "onSave"
+}
