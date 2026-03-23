@@ -11,8 +11,8 @@
         \begin{onecolentry}
         \begin{highlights}
 
-    \item Collaboration avec des chercheur·e·s du Laboratory for the History of Science and Technology (EPFL) et de l'Institut des humanit\'es en m\'edecine (Lausanne).
-    \item Conception d'un cadre d'annotation « double triangle » combinant LLMs et annotation humaine pour une annotation scalable et fiable, réduisant de >50\% l'effort d'annotation humaine tout en maintenant une précision >99\%. \textbf{Soumis à ACL Rolling Review (en cours d'évaluation)}.
+    \item Collaboration avec des historien·ne·s du Laboratory for the History of Science and Technology (EPFL) et de l'Institut des humanit\'es en m\'edecine (Lausanne).
+    \item Conception d'un cadre d'annotation « double triangle » combinant LLMs et annotation humaine pour une annotation scalable et fiable, réduisant de >50\% l'effort d'annotation humaine tout en maintenant une précision >99\%. \textbf{Soumis à ACL Rolling Review (en cours d'expertise)}.
     \item Construction d'un jeu de données de référence de 2 600+ entrées de médecins des Guides Rosenwald à l'aide du cadre proposé, pour évaluer l'extraction d'informations structurées à partir de documents historiques.
     \item Comparaison de quatre paradigmes d'extraction sur le benchmark et application de la meilleure approche (image + texte OCR) pour extraire 577 000+ entrées de médecins et d'officiels de santé des Guides Rosenwald.
     \item Découverte de 3 700+ entrées de femmes médecins (1887--1922), permettant de futures études sur la pratique médicale féminine.
@@ -31,7 +31,7 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item Déploiement de \href{https://huggingface.co/google/gemma-3n-E4B-it-litert-preview}{Google Gemma 3n E4B IT (int4)} sur des appareils embarqués pour fournir des informations médicales hors ligne aux sages-femmes et infirmier·ère·s dans des contextes à faibles ressources (connectivité Internet limitée)
-                \item Application des techniques de Génération augmentée par récupération (RAG) sur des supports officiels de formation des sages-femmes pour améliorer la précision et la pertinence locale des réponses
+                \item Application des techniques de Retrieval Augmented Generation (RAG) sur des supports officiels de formation des sages-femmes pour améliorer la précision et la pertinence locale des réponses
                 \item Constitution d'un \href{https://github.com/nmrenyi/obgyn-qa-collection}{jeu de données OBGYN ouvert} de 20 500+ questions en filtrant cinq benchmarks médicaux publics (\href{https://arxiv.org/abs/2411.15640}{AfriMed-QA}, \href{https://proceedings.mlr.press/v174/pal22a}{MedMCQA}, \href{https://doi.org/10.1101/2025.10.25.25338798}{Kenya Clinical Vignettes}, \href{https://arxiv.org/abs/2009.13081}{MedQA-USMLE}, \href{https://arxiv.org/abs/2512.17028}{Women's Health Benchmark}) à l'aide des étiquettes existantes et de Gemini 3 Flash Preview pour la classification des questions
                 \item Évaluation comparative du modèle embarqué face à des modèles de référence (ex. GPT-5) sur le jeu de données OBGYN afin d'identifier les écarts de performance
                 \item Amélioration en cours de la qualité du RAG et préparation d'études d'évaluation avec les sages-femmes à Zanzibar
