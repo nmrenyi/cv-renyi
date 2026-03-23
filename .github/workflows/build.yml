@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -33,11 +35,16 @@ jobs:
           cp cv-renyi-en/main.pdf cv-en-renyi-${{ env.DATE }}.pdf
           cp cv-renyi-fr/main.pdf cv-fr-renyi-${{ env.DATE }}.pdf
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: cv-renyi-${{ env.DATE }}
-          path: |
-            cv-en-renyi-${{ env.DATE }}.pdf
-            cv-fr-renyi-${{ env.DATE }}.pdf
-          retention-days: 90
+      - name: Publish release
+        run: |
+          TAG="v${{ env.DATE }}"
+          gh release delete "${TAG}" --yes 2>/dev/null || true
+          git push origin --delete "${TAG}" 2>/dev/null || true
+          gh release create "${TAG}" \
+            --title "CV Ren Yi – ${{ env.DATE }}" \
+            --notes "Built from commit [\`${GITHUB_SHA::7}\`](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})" \
+            --latest \
+            "cv-en-renyi-${{ env.DATE }}.pdf" \
+            "cv-fr-renyi-${{ env.DATE }}.pdf"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
