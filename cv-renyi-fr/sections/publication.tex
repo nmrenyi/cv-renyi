@@ -1,42 +1,21 @@
 \section{Publications}
-        \begin{twocolentry} {2022}
-        
-\textbf{A Survey of Loss Functions in Neural Recommendation Models} [\href{https://ccir2022.cqut.edu.cn/acceptlist.htm}{Articles}]
+
+        \begin{twocolentry} {2026}
+
+\textbf{Double Triangle Annotation: A Scalable Human-in-the-Loop Framework for High-Precision Historical Document Annotation} [\href{https://arxiv.org/abs/2605.25781}{Prépublication}] [\href{https://github.com/nmrenyi/double-triangle-annotation}{Annotation}] [\href{https://github.com/nmrenyi/rosenwald-benchmark}{Benchmark}]
 
 \end{twocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \textbf{Yi Ren}, Weizhi Ma, Min Zhang, Yiqun Liu, Shaoping Ma (CCIR 2022) 
+            \textbf{Yi Ren} (prépublication arXiv, 2026)
         \end{onecolentry}
         \vspace{0.10 cm}
 
         \begin{onecolentry}
         \begin{highlights}
-            \item Revue et analyse expérimentale de 7 fonctions de perte (ex. BCE, BPR) dans des modèles de recommandation
-            \item Analyse de la sensibilité aux paramètres et des compromis de performance
+            \item Conception d'un cadre d'annotation autour d'un principe de consensus, appliqué récursivement sur deux niveaux---entre deux MLLMs indépendants (Claude, Qwen, Llama, Grok), puis entre deux systèmes human-in-the-loop construits sur ces modèles---n'escaladant que les désaccords vers un jury humain
+            \item Word Error Rate de 0.003 atteint sur les Guides Rosenwald, avec >85\% des champs auto-acceptés par consensus inter-modèles---réduisant la charge totale de relecture humaine de plus de 50\% par rapport à une annotation manuelle complète par un seul annotateur
+            \item Publication du premier benchmark d'extraction structurée pour les Guides Rosenwald (13 595 champs annotés sur 60 colonnes) pour soutenir les futurs travaux sur le traitement de documents historiques
         \end{highlights}
         \end{onecolentry}
-
-        \vspace{0.2 cm}
-
-        
-
-        \begin{twocolentry} {2021}
-            \textbf{ReChorus: A General, Efficient and Flexible Framework for Recommendation Algorithms} [\href{https://github.com/thuwangcy/rechorus}{Code}] [\href{https://www.jos.org.cn/josen/article/abstract/6473}{Article}]\end{twocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            Chenyang Wang, \textbf{Yi Ren}, Weizhi Ma, Min Zhang, Yiqun Liu, Shaoping Ma (CCML 2021 Best Student Paper)
-        \end{onecolentry}
-        \vspace{0.10 cm}
-        
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Co-développement de ReChorus, un framework de recommandation basé sur PyTorch, prenant en charge des modèles classiques et d’apprentissage profond (généralistes, séquentiels, knowledge-aware et time-aware).
-                \item Standardisation du prétraitement, de l'implémentation et de l'évaluation pour faciliter la reproductibilité ; prototypage rapide via une conception modulaire légère.
-            \end{highlights}            
-        \end{onecolentry}
-
-
-    
