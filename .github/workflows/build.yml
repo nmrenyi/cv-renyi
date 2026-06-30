@@ -23,6 +23,7 @@ jobs:
         with:
           working_directory: cv-renyi-en
           root_file: main.tex
+          latexmk_use_lualatex: true
 
       - name: Compile French CV
         uses: xu-cheng/latex-action@v3

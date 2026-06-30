@@ -41,9 +41,15 @@
     \usepackage[T1]{fontenc}
     \usepackage[utf8]{inputenc}
     \usepackage{lmodern}
+    \usepackage{charter}
+    \newcommand{\cjkRenYi}{} % pdflatex cannot render CJK; name shown romanized only
+\else
+    % lualatex: real fonts via fontspec, with a bundled CJK font for the name
+    \usepackage{fontspec}
+    \setmainfont{XCharter} % OpenType Charter, matches the pdflatex charter font
+    \newfontfamily\cjkfont{FandolSong} % CJK font bundled with TeX Live (present in CI too)
+    \newcommand{\cjkRenYi}{\hspace{0.25em}\raisebox{1.5pt}{\cjkfont\fontsize{15pt}{15pt}\selectfont 任一}}
 \fi
-
-\usepackage{charter}
 
 % Some settings:
 \raggedright
