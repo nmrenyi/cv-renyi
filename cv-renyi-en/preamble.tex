@@ -110,10 +110,10 @@
     \end{adjustwidth}
 } % new environment for one column entries
 
-\newenvironment{twocolentry}[2][]{
+\newenvironment{twocolentry}[2][4.5 cm]{
     \onecolentry
     \def\secondColumn{#2}
-    \setcolumnwidth{\fill, 4.5 cm}
+    \setcolumnwidth{\fill, #1}
     \begin{paracol}{2}
 }{
     \switchcolumn \raggedleft \secondColumn
