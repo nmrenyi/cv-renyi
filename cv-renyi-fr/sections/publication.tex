@@ -1,6 +1,6 @@
 \section{Publications}
 
-        \begin{twocolentry} {2026}
+        \begin{twocolentry}[1.5 cm] {2026}
 
 \textbf{Double Triangle Annotation: A Scalable Human-in-the-Loop Framework for High-Precision Historical Document Annotation} [\href{https://arxiv.org/abs/2605.25781}{Prépublication}] [\href{https://github.com/nmrenyi/double-triangle-annotation}{Annotation}] [\href{https://github.com/nmrenyi/rosenwald-benchmark}{Benchmark}]
 
@@ -8,7 +8,7 @@
 
         \vspace{0.10 cm}
         \begin{onecolentry}
-            \textbf{Yi Ren} (prépublication arXiv, 2026)
+            \textbf{Ren Yi} (prépublication arXiv \href{https://arxiv.org/abs/2605.25781}{arXiv:2605.25781}, 2026)
         \end{onecolentry}
         \vspace{0.10 cm}
 
@@ -17,5 +17,47 @@
             \item Conception d'un cadre d'annotation autour d'un principe de consensus, appliqué récursivement sur deux niveaux---entre deux MLLMs indépendants (Claude, Qwen, Llama, Grok), puis entre deux systèmes human-in-the-loop construits sur ces modèles---n'escaladant que les désaccords vers un jury humain
             \item Word Error Rate de 0.003 atteint sur les Guides Rosenwald, avec >85\% des champs auto-acceptés par consensus inter-modèles---réduisant la charge totale de relecture humaine de plus de 50\% par rapport à une annotation manuelle complète par un seul annotateur
             \item Publication du premier benchmark d'extraction structurée pour les Guides Rosenwald (13 595 champs annotés sur 60 colonnes) pour soutenir les futurs travaux sur le traitement de documents historiques
+        \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+        \begin{twocolentry}[1.5 cm] {2026}
+
+\textbf{MAM-AI: An On-Device Medical Retrieval-Augmented Generation System for Nurses and Midwives in Zanzibar} [\href{https://arxiv.org/abs/2606.29580}{Prépublication}] [\href{https://github.com/nmrenyi/mamai}{Code}] [\href{https://github.com/nmrenyi/mamai-eval}{Éval}] [\href{https://nmrenyi-mamai-demo.hf.space}{Démo en ligne}]
+
+\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textbf{Ren Yi} (prépublication arXiv \href{https://arxiv.org/abs/2606.29580}{arXiv:2606.29580}, 2026)
+        \end{onecolentry}
+        \vspace{0.10 cm}
+
+        \begin{onecolentry}
+        \begin{highlights}
+            \item Un prompt système repensé est un levier majeur sur la qualité des réponses---réduisant les réponses évasives se limitant à « consulter un médecin senior » de 32,7\% des questions à 3,2\%, tout en doublant approximativement le rappel des faits clés de 0,139 à 0,279 et en n'augmentant les réponses potentiellement nuisibles que de 12,8\% à 15,7\%
+            \item La recherche embarquée est performante, mais le classement n'est pas le levier : sur notre benchmark de recherche, l'embedder embarqué de 300M se classe parmi les systèmes de recherche cloud, mais un meilleur embedder ou un reranker affiné ne modifie pas les réponses de bout en bout---les leviers les plus importants pour la qualité des réponses sont le générateur ainsi que la couverture et la qualité du corpus
+            \item Le générateur compte le plus, et la fidélité décide du déploiement : la qualité des réponses croît avec la taille du modèle avant de plafonner, tandis que la quantification et la recherche n'y changent presque rien ; parmi deux candidats embarqués de même taille, Gemma 4 E4B, plus fidèle mais moins serviable, est déployé plutôt que Gemma 3n E4B---un arbitrage entre sécurité et utilité
+        \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+        \begin{twocolentry}[0.9 cm] {2026}
+
+\textbf{mamabench and mamaretrieval: Benchmarks for Evaluating Medical Retrieval-Augmented Generation in Maternal, Neonatal, and Reproductive Health} \mbox{[\href{https://arxiv.org/abs/2606.29467}{Prépublication}]} \mbox{[\href{https://huggingface.co/datasets/nmrenyi/mamabench}{mamabench}]} \mbox{[\href{https://huggingface.co/datasets/nmrenyi/mamaretrieval}{mamaretrieval}]}
+
+\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textbf{Ren Yi} (prépublication arXiv \href{https://arxiv.org/abs/2606.29467}{arXiv:2606.29467}, 2026)
+        \end{onecolentry}
+        \vspace{0.10 cm}
+
+        \begin{onecolentry}
+        \begin{highlights}
+            \item Assemblage des deux benchmarks---mamabench (25 949 éléments de QA) et mamaretrieval (3 185 requêtes de recherche)---en cadrant et filtrant des sources rédigées par des experts (examens de licence, panels de médecins, directives) plutôt qu'en rédigeant de nouvelles questions cliniques
+            \item Décomposition de la pertinence clinique en une grille graduée et multidimensionnelle (0--6)---un filtre thématique sur trois dimensions graduées : contenu pertinent, conseils actionnables et densité---plutôt qu'une étiquette binaire pertinent/non pertinent, distinguant une recherche solide d'une recherche simplement adéquate
+            \item Mesure et divulgation des limites des étiquettes attribuées par LLM---via l'accord du classifieur de portée, une vérification par un modèle de pointe et un audit de complétude du pooling---plutôt que de présenter les benchmarks comme une vérité absolue
         \end{highlights}
         \end{onecolentry}

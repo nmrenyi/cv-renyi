@@ -16,14 +16,13 @@ Each folder contains:
 
 ## Build
 
-Compile with `latexmk` using **LuaLaTeX** (needed to render the Chinese name 任一
-with the TeX Live–bundled FandolSong font):
+Both CVs compile with `latexmk` using **LuaLaTeX** (needed to render the Chinese
+name 任一 with the TeX Live–bundled FandolSong font):
 
 ```bash
-cd cv-renyi-en
+cd cv-renyi-en   # or cv-renyi-fr
 latexmk -lualatex main.tex
 ```
 
 > A `pdflatex` build still compiles, but shows the name romanized ("Ren Yi")
-> only — the Chinese characters appear under LuaLaTeX. (The French CV is still
-> built with `pdflatex`.)
+> only — the Chinese characters 任一 require LuaLaTeX.

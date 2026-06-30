@@ -30,6 +30,7 @@ jobs:
         with:
           working_directory: cv-renyi-fr
           root_file: main.tex
+          latexmk_use_lualatex: true
 
       - name: Rename PDFs with date
         run: |
