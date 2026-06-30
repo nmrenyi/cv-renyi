@@ -19,3 +19,45 @@
             \item Released the first structured-extraction benchmark for the Rosenwald Guides (13,595 annotated fields across 60 columns) to support future work on historical document processing
         \end{highlights}
         \end{onecolentry}
+
+        \vspace{0.2 cm}
+        \begin{twocolentry} {2026}
+
+\textbf{MAM-AI: An On-Device Medical Retrieval-Augmented Generation System for Nurses and Midwives in Zanzibar} [\href{https://arxiv.org/abs/2606.29580}{Preprint}] [\href{https://github.com/nmrenyi/mamai}{Code}] [\href{https://github.com/nmrenyi/mamai-eval}{Eval}] [\href{https://nmrenyi-mamai-demo.hf.space}{Live Demo}]
+
+\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textbf{Yi Ren} (arXiv preprint, 2026)
+        \end{onecolentry}
+        \vspace{0.10 cm}
+
+        \begin{onecolentry}
+        \begin{highlights}
+            \item A redesigned system prompt is a major lever on answer quality---cutting deflective answers that only said ``refer to a senior doctor'' from 32.7\% of questions to 3.2\%, while roughly doubling key-fact recall from 0.139 to 0.279 and raising potentially-harmful answers only from 12.8\% to 15.7\%
+            \item On-device retrieval is strong, but ranking is not the lever: on our retrieval benchmark the 300M on-device embedder ranks among the cloud retrievers, yet a better embedder or a fine-tuned reranker leaves end-to-end answers unchanged---the larger levers on answer quality are the generator and corpus coverage and quality
+            \item The generator matters most, and faithfulness decides deployment: answer quality rises steeply with model size before plateauing, while quantization and retrieval barely move it; among two same-size on-device candidates, the more faithful but less helpful Gemma 4 E4B is deployed over Gemma 3n E4B---a safety-versus-usefulness choice
+        \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+        \begin{twocolentry} {2026}
+
+\textbf{mamabench and mamaretrieval: Benchmarks for Evaluating Medical Retrieval-Augmented Generation in Maternal, Neonatal, and Reproductive Health} [\href{https://arxiv.org/abs/2606.29467}{Preprint}] [\href{https://huggingface.co/datasets/nmrenyi/mamabench}{mamabench}] [\href{https://huggingface.co/datasets/nmrenyi/mamaretrieval}{mamaretrieval}]
+
+\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \textbf{Yi Ren} (arXiv preprint, 2026)
+        \end{onecolentry}
+        \vspace{0.10 cm}
+
+        \begin{onecolentry}
+        \begin{highlights}
+            \item Assembled both benchmarks---mamabench (25,949 QA items) and mamaretrieval (3,185 retrieval queries)---by scoping and filtering expert-authored sources (licensing exams, physician panels, guidelines) rather than authoring new clinical questions
+            \item Decomposed clinical relevance into a graded, multi-dimensional rubric (0--6)---a topical gate over three graded dimensions: meaningful content, actionable guidance, and density---rather than a binary relevant/not-relevant label, separating strong retrieval from merely adequate retrieval
+            \item Measured and disclosed the limits of the LLM-assigned labels---via scope-classifier agreement, a frontier-judge check, and a pooling-completeness audit---rather than presenting the benchmarks as an oracle
+        \end{highlights}
+        \end{onecolentry}

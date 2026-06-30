@@ -21,20 +21,19 @@
         \end{onecolentry}
         \vspace{0.2 cm}
         \begin{twocolentry}{
-            Feb 2026 - Present
+            Feb 2026 - June 2026
         }
             \textbf{On-device medical chatbot for nurse-midwives, \href{https://www.d-tree.org/}{\textit{D-tree}}, Zanzibar, Tanzania} 
             
-            [\href{https://github.com/nmrenyi/mamai}{Code}]  [\href{https://youtu.be/M_Kruluel28}{Demo Video}] [\href{https://github.com/nmrenyi/obgyn-qa-collection}{Dataset}]
+            [\href{https://github.com/nmrenyi/mamai}{Code}] [\href{https://arxiv.org/abs/2606.29580}{System Preprint}] [\href{https://arxiv.org/abs/2606.29467}{Benchmarks Preprint}] [\href{https://nmrenyi-mamai-demo.hf.space}{Live Demo}] [\href{https://youtu.be/M_Kruluel28}{Video Demo}]
         \end{twocolentry}
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Deployed \href{https://deepmind.google/models/gemma/gemma-4/}{Google Gemma 4 E4B IT (int4)} on edge devices to provide offline medical information for midwives and nurses in low-resource settings (limited Internet connectivity)
-                \item Used Retrieval Augmented Generation (RAG) techniques on official midwife training materials to enhance the system's ability to provide accurate and locally feasible information
-                \item Curated an \href{https://github.com/nmrenyi/obgyn-qa-collection}{open OBGYN QA dataset} of 20,500+ questions by filtering five public medical benchmarks (\href{https://arxiv.org/abs/2411.15640}{AfriMed-QA}, \href{https://proceedings.mlr.press/v174/pal22a}{MedMCQA}, \href{https://doi.org/10.1101/2025.10.25.25338798}{Kenya Clinical Vignettes}, \href{https://arxiv.org/abs/2009.13081}{MedQA-USMLE}, \href{https://arxiv.org/abs/2512.17028}{Women's Health Benchmark}) using existing tags and Gemini 3 Flash Preview for question classification
-                \item Benchmarked the on-device model against leading models (e.g. GPT-5) on the curated OBGYN dataset to evaluate performance gaps and identify areas for improvement
-                \item Improving RAG quality and preparing user evaluation studies with nurse-midwives in Zanzibar
+                \item Built a fully offline, on-device medical RAG assistant---an EmbeddingGemma-300M retriever and a Google Gemma 4 E4B (int4) generator running on commodity Android---that answers nurse-midwives' clinical questions with cited guidance, requiring no connectivity and keeping all patient data on the device
+                \item Curated a \href{https://github.com/nmrenyi/mamai-medical-guidelines}{RAG guideline corpus} of 87 authoritative documents (WHO, NICE, MSF, and Zanzibar/Tanzania national guidelines), chunked into 63,650 on-device passages
+                \item Designed and ran a layered evaluation of the deployed system, covering end-to-end answer quality, the retriever and the generator each measured in isolation, and on-device latency as a function of input length and CPU/GPU backend
+                \item Built an open \href{https://github.com/nmrenyi/mamai-eval}{evaluation harness} over two benchmarks (\href{https://huggingface.co/datasets/nmrenyi/mamabench}{mamabench} and \href{https://huggingface.co/datasets/nmrenyi/mamaretrieval}{mamaretrieval}), scored by an LLM judge validated against physician rubrics from HealthBench
             \end{highlights}
         \end{onecolentry}
 
