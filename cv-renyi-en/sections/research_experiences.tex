@@ -32,7 +32,7 @@
             \begin{highlights}
                 \item Built a fully offline, on-device medical RAG assistant---an EmbeddingGemma-300M retriever and a Google Gemma 4 E4B (int4) generator running on commodity Android---that answers nurse-midwives' clinical questions with cited guidance, requiring no connectivity and keeping all patient data on the device
                 \item Curated a \href{https://github.com/nmrenyi/mamai-medical-guidelines}{RAG guideline corpus} of 87 authoritative documents (WHO, NICE, MSF, and Zanzibar/Tanzania national guidelines), chunked into 63,650 on-device passages
-                \item Designed and ran a layered evaluation of the deployed system, covering end-to-end answer quality, the retriever and the generator each measured in isolation, and on-device latency as a function of input length and CPU/GPU backend
+                \item Designed and ran a layered evaluation of the system, covering end-to-end answer quality, the retriever and the generator each measured in isolation, and on-device latency across input lengths and CPU/GPU backends
                 \item Built an open \href{https://github.com/nmrenyi/mamai-eval}{evaluation harness} over two benchmarks (\href{https://huggingface.co/datasets/nmrenyi/mamabench}{mamabench} and \href{https://huggingface.co/datasets/nmrenyi/mamaretrieval}{mamaretrieval}), scored by an LLM judge validated against physician rubrics from HealthBench
             \end{highlights}
         \end{onecolentry}
